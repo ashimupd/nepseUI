@@ -32,7 +32,7 @@ function Header({ children }) {
     const user = {
       firstName: "Ashim",
       lastName: "Gautam",
-      id: 0,
+      id: 1,
       photo: null,
     };
     setUser(user);

@@ -1,6 +1,8 @@
 import React from "react";
 import { Box, Typography } from "@mui/material";
 import OutlinedTimeline from "./OutlinedTimeline";
+// eslint-disable-next-line no-unused-vars
+import images from "../../images/images";
 
 const Home = () => {
   return (
