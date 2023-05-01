@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import { Link } from "react-router-dom";
@@ -14,6 +14,7 @@ import { routes } from "../../Utils/routes";
 import nepInUSA from "../../images/blue.jpg";
 import ProfileDropdown from "./ProfileDropdown";
 import LoginRegisterButtons from "../login/Buttons";
+import { useUserContext } from "../userContetx";
 
 const preLoginPages = routes.filter(
   (route) => route.header && !route.protected
@@ -25,18 +26,7 @@ const postLoginPages = routes.filter(
 // eslint-disable-next-line react/prop-types
 function Header({ children }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
-  const [user, setUser] = useState({});
-
-  useEffect(() => {
-    //makeAPI call to get user info (/user)
-    const user = {
-      firstName: "Ashim",
-      lastName: "Gautam",
-      id: 1,
-      photo: null,
-    };
-    setUser(user);
-  }, []);
+  const { userData: user } = useUserContext();
 
   const pages = user?.id ? postLoginPages : preLoginPages;
 
@@ -153,7 +143,9 @@ function Header({ children }) {
           </Toolbar>
         </Container>
       </AppBar>
-      <Box>{children}</Box>
+      <Container maxWidth="lg" sx={{ my: 5 }}>
+        {children}
+      </Container>
     </>
   );
 }

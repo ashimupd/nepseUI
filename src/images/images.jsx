@@ -9,6 +9,7 @@ import ryle2 from "./ryle2.jpg";
 import ryle3 from "./ryle3.jpg";
 import stokes1 from "./stokes1.jpg";
 import stokes2 from "./stokes2.jpg";
+import nepaliGirl from "./nepaliGirl.jpeg";
 
 const images = {
   black,
@@ -22,5 +23,6 @@ const images = {
   ryle3,
   stokes1,
   stokes2,
+  nepaliGirl,
 };
 export default images;

@@ -4,19 +4,30 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import Login from "./components/login/Login";
 import Register from "./components/login/Register";
+import Colleges from "./components/colleges/Colleges";
+import { UserContextProvider } from "./components/userContetx";
+import NotFound from "./components/Error/NotFound";
+import StudentInfo from "./components/StudentInfo/StudentInfo";
+import MyAccount from "./components/myaccount/MyAccount";
 function App() {
   return (
     <BrowserRouter>
-      <Header>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} />
-          <Route path="*" element={<p>Not found...</p>} />
-        </Routes>
-      </Header>
-      <Footer />
+      <UserContextProvider>
+        <Header>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/home" element={<Home />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/colleges" element={<Colleges />} />
+            <Route path="/error" element={<NotFound />} />
+            <Route path="/studentinfo" element={<StudentInfo />} />
+            <Route path="/account" element={<MyAccount />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Header>
+        <Footer />
+      </UserContextProvider>
     </BrowserRouter>
   );
 }
