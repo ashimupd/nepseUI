@@ -1,25 +1,35 @@
-import React from "react";
-// eslint-disable-next-line no-unused-vars
-import { Box, Typography } from "@mui/material";
-// eslint-disable-next-line no-unused-vars
-import OutlinedTimeline from "./OutlinedTimeline";
-// eslint-disable-next-line no-unused-vars
-import images from "../../images/images";
-import { useUserContext } from "../userContetx";
+import React from 'react';
+import { Box, Typography } from '@mui/material';
+import Divider from '@mui/material/Divider';
+import Carousel from '../Carousel/Carousel';
+import images from '../../images/images';
+import { items } from './CarouselData';
+//import { useUserContext } from '../userContetx';
 
 const HomePreLogin = () => {
   return (
-    <Box
-      sx={{
-        backgroundColor: "#F2F2F2",
-        padding: "50px",
-        backgroundImage: `url(${images.nepaliGirl})`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "auto",
-        minHeight: 800,
-        objectFit: "contain",
-      }}
-    ></Box>
+    <>
+      <>
+        <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
+          Nepinusa, the only one of its kind, is a community backed by 6 years of experience of studying, living & working in the US that aims to help Nepali students navigate their higher education,
+          career & life in the US.
+        </Typography>
+        <Divider sx={{ mb: 2 }} />
+      </>
+      <Box
+        sx={{
+          backgroundColor: '#F2F2F2',
+          padding: '50px',
+          backgroundImage: `url(${images.nepaliGirl})`,
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'cover',
+          minHeight: 800,
+        }}
+      ></Box>
+      <Box sx={{ mt: 5 }}>
+        <Carousel items={items} />
+      </Box>
+    </>
   );
 };
 export default HomePreLogin;
