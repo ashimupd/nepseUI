@@ -9,7 +9,10 @@ import { UserContextProvider } from './components/userContetx';
 import NotFound from './components/Error/NotFound';
 import StudentInfo from './components/StudentInfo/StudentInfo';
 import MyAccount from './components/myaccount/MyAccount';
-import AboutUs from './components/AboutUs/AboutUs';
+import AboutUs from './components/aboutUs/AboutUs';
+import ContactUs from './components/contactus/ContactUs';
+import Blog from './components/blog/Blog';
+
 function App() {
   return (
     <BrowserRouter>
@@ -25,6 +28,8 @@ function App() {
             <Route path="/studentinfo" element={<StudentInfo />} />
             <Route path="/account" element={<MyAccount />} />
             <Route path="/aboutus" element={<AboutUs />} />
+            <Route path="/contact" element={<ContactUs />} />
+            <Route path="/blog" element={<Blog />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Header>

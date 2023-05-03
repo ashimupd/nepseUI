@@ -1,9 +1,10 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
 import Divider from '@mui/material/Divider';
-import Carousel from '../Carousel/Carousel';
+import Carousel from '../carousel/Carousel';
 import images from '../../images/images';
 import { items } from './CarouselData';
+import OutlinedTimeLine from './OutlinedTimeline';
 //import { useUserContext } from '../userContetx';
 
 const HomePreLogin = () => {
@@ -11,8 +12,7 @@ const HomePreLogin = () => {
     <>
       <>
         <Typography variant="h6" fontWeight="bold" sx={{ mb: 2 }}>
-          Nepinusa, the only one of its kind, is a community backed by 6 years of experience of studying, living & working in the US that aims to help Nepali students navigate their higher education,
-          career & life in the US.
+          Nepinusa is a community backed by 6 years of experience of studying, living & working in the US that aims to help Nepali students navigate their higher education, career & life in the US.
         </Typography>
         <Divider sx={{ mb: 2 }} />
       </>
@@ -26,6 +26,9 @@ const HomePreLogin = () => {
           minHeight: 800,
         }}
       ></Box>
+      <Box>
+        <OutlinedTimeLine />
+      </Box>
       <Box sx={{ mt: 5 }}>
         <Carousel items={items} />
       </Box>

@@ -13,6 +13,10 @@ import nepaliGirl from './nepaliGirl.jpeg';
 import simon_stha from './simon_stha.jpg';
 import agu5411 from './agu5411.jpg';
 import ishwor_karki from './ishwor_karki.jpg';
+import ISN_0 from './ISN_0.jpg';
+import ISN_1 from './ISN_1.jpg';
+import ISN_2 from './ISN_2.jpg';
+import ISN_3 from './ISN_3.jpg';
 
 const images = {
   black,
@@ -30,5 +34,9 @@ const images = {
   simon_stha,
   agu5411,
   ishwor_karki,
+  ISN_0,
+  ISN_1,
+  ISN_2,
+  ISN_3,
 };
 export default images;

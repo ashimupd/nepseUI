@@ -16,7 +16,7 @@ export const UserContextProvider = ({ children }) => {
       photo: null,
     };
     setUserData(user);
-  }, [userData]);
+  }, []);
   return <UserContext.Provider value={{ userData }}>{children}</UserContext.Provider>;
 };
 
