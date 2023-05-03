@@ -18,7 +18,7 @@ const validationSchema = Yup.object({
 
 const StudentInfo = () => {
   const [showFormSubmitFeedback, setShowFormSubmitFeedback] = useState(false);
-  const [error, setError] = useState(false); //By default, it's true
+  const [error, setError] = useState(false); //By default, it's false
   const handleClose = (event, reason) => {
     if (reason === 'clickaway') {
       return;
@@ -67,7 +67,7 @@ const StudentInfo = () => {
   return (
     <Container maxWidth="sm">
       <Snackbar open={showFormSubmitFeedback} autoHideDuration={6000} onClose={handleClose}>
-        <Alert onClose={handleClose} severity="success" sx={{ width: '100%' }}>
+        <Alert onClose={handleClose} severity={error ? 'error' : 'success'} sx={{ width: '100%' }}>
           {!error ? 'Your response has been recorded!' : 'There was an error submitting the form! Please try again at a later time'}
         </Alert>
       </Snackbar>
@@ -165,7 +165,7 @@ const StudentInfo = () => {
         <FormControl fullWidth sx={{ marginBottom: 2 }}>
           <TextField label="High School Transcripts" type="file" InputLabelProps={{ shrink: true }} name="transcripts" onChange={formik.handleChange} />
           <Typography variant="caption" color="textSecondary">
-            The file should be a PDF that contains transcripts from class 10, 11, and 12.
+            The file should be a single PDF that contains transcripts from class 10, 11, and 12.
           </Typography>
         </FormControl>
         <Button variant="contained" type="submit">

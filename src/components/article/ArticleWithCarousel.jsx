@@ -1,9 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Box, Typography, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
+import { Carousel } from 'react-responsive-carousel';
 import { CheckCircle } from '@mui/icons-material';
 
-const Article = ({ title, image, content }) => {
+const ArticleWithCarousel = ({ title, imageList, content }) => {
   const renderContent = (contentItem) => {
     if (Array.isArray(contentItem)) {
       return (
@@ -29,7 +31,15 @@ const Article = ({ title, image, content }) => {
 
   return (
     <Box sx={{ maxWidth: '100%' }}>
-      {image ? <img src={image} alt={title} style={{ width: '100%', maxHeight: '400px', objectFit: 'cover' }} /> : null}
+      {imageList ? (
+        <Carousel width="800px" dynamicHeight showArrows infiniteLoop autoPlay stopOnHover swipeable>
+          {imageList.map((image, index) => (
+            <Box key={index}>
+              <img src={image} alt={`carousel-item-${index}`} />
+            </Box>
+          ))}
+        </Carousel>
+      ) : null}
       <Box sx={{ p: 1 }}>
         <Typography color="primary.main" variant="h4" sx={{ mb: 1 }}>
           {title}
@@ -42,10 +52,10 @@ const Article = ({ title, image, content }) => {
   );
 };
 
-Article.propTypes = {
+ArticleWithCarousel.propTypes = {
   title: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  imageList: PropTypes.string,
   content: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)])).isRequired,
 };
 
-export default Article;
+export default ArticleWithCarousel;

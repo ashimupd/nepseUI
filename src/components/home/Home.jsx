@@ -1,10 +1,10 @@
-import React from "react";
+import React from 'react';
 // eslint-disable-next-line no-unused-vars
-import { Box } from "@mui/material";
+import { Box } from '@mui/material';
 // eslint-disable-next-line no-unused-vars
-import HomePreLogin from "./HomePreLogin";
-import HomePostLogin from "./HomePostLogin";
-import { useUserContext } from "../userContetx";
+import HomePreLogin from './HomePreLogin';
+import HomePostLogin from './HomePostLogin';
+import { useUserContext } from '../userContetx';
 
 const Home = () => {
   const { userData: user } = useUserContext();

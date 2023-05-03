@@ -1,22 +1,11 @@
-import React, { useState } from "react";
-import {
-  Avatar,
-  Box,
-  Button,
-  Checkbox,
-  Container,
-  FormControlLabel,
-  Grid,
-  Link,
-  TextField,
-  Typography,
-} from "@mui/material";
-import { Link as routerLink } from "react-router-dom";
-import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import React, { useState } from 'react';
+import { Avatar, Box, Button, Checkbox, Container, FormControlLabel, Grid, Link, TextField, Typography } from '@mui/material';
+import { Link as routerLink } from 'react-router-dom';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -24,11 +13,11 @@ const Login = () => {
   };
 
   return (
-    <Container sx={{ height: "45rem", display: "flex", alignItems: "center" }}>
+    <Container sx={{ height: '45rem', display: 'flex', alignItems: 'center' }}>
       <Grid container justifyContent="center">
         <Grid item xs={12} sm={6} md={4}>
-          <Box sx={{ textAlign: "center" }}>
-            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}>
+          <Box sx={{ textAlign: 'center' }}>
+            <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
               <LockOutlinedIcon />
             </Avatar>
             <Typography component="h1" variant="h5">
@@ -62,27 +51,13 @@ const Login = () => {
               onChange={(e) => setPassword(e.target.value)}
               sx={{ mb: 3 }}
             />
-            <FormControlLabel
-              control={<Checkbox value="remember" color="primary" />}
-              label="Remember me"
-              sx={{ mb: 3 }}
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              sx={{ mb: 2 }}
-            >
+            <FormControlLabel control={<Checkbox value="remember" color="primary" />} label="Remember me" sx={{ mb: 3 }} />
+            <Button type="submit" fullWidth variant="contained" color="primary" sx={{ mb: 2 }}>
               Sign In
             </Button>
             <Grid container justifyContent="space-between">
               <Grid item>
-                <Link
-                  component={routerLink}
-                  to="/forget-password"
-                  variant="body2"
-                >
+                <Link component={routerLink} to="/forget-password" variant="body2">
                   Forgot password?
                 </Link>
               </Grid>

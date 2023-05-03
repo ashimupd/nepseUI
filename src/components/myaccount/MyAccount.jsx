@@ -1,25 +1,18 @@
 // MyAccounts.js
-import { React, useState } from "react";
-import { useFormik } from "formik";
-import * as Yup from "yup";
-import {
-  Container,
-  Typography,
-  TextField,
-  Button,
-  Stack,
-  Box,
-} from "@mui/material";
-import Snackbar from "@mui/material/Snackbar";
-import Alert from "@mui/material/Alert";
+import { React, useState } from 'react';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+import { Container, Typography, TextField, Button, Stack, Box } from '@mui/material';
+import Snackbar from '@mui/material/Snackbar';
+import Alert from '@mui/material/Alert';
 
 const validationSchema = Yup.object().shape({
-  email: Yup.string().email("Invalid email address").required("Required"),
-  oldPassword: Yup.string().required("Required"),
-  newPassword: Yup.string().required("Required"),
+  email: Yup.string().email('Invalid email address').required('Required'),
+  oldPassword: Yup.string().required('Required'),
+  newPassword: Yup.string().required('Required'),
   confirmNewPassword: Yup.string()
-    .oneOf([Yup.ref("newPassword"), null], "Passwords must match")
-    .required("Required"),
+    .oneOf([Yup.ref('newPassword'), null], 'Passwords must match')
+    .required('Required'),
 });
 
 const MyAccount = () => {
@@ -27,9 +20,9 @@ const MyAccount = () => {
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(false); //By default, it's true
   // eslint-disable-next-line no-unused-vars
-  const [errorMessage, setErrorMessage] = useState("");
+  const [errorMessage, setErrorMessage] = useState('');
   const handleClose = (event, reason) => {
-    if (reason === "clickaway") {
+    if (reason === 'clickaway') {
       return;
     }
 
@@ -37,10 +30,10 @@ const MyAccount = () => {
   };
   const formik = useFormik({
     initialValues: {
-      email: "",
-      oldPassword: "",
-      newPassword: "",
-      confirmNewPassword: "",
+      email: '',
+      oldPassword: '',
+      newPassword: '',
+      confirmNewPassword: '',
     },
     validationSchema,
     onSubmit: (values) => {
@@ -56,18 +49,12 @@ const MyAccount = () => {
 
   return (
     <Container maxWidth="sm">
-      <Snackbar
-        open={showFormSubmitFeedback}
-        autoHideDuration={6000}
-        onClose={handleClose}
-      >
-        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
-          {!error
-            ? "Your response has been recorded! Password successfully changed"
-            : { errorMessage }}
+      <Snackbar open={showFormSubmitFeedback} autoHideDuration={6000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity={error ? 'error' : 'success'} sx={{ width: '100%' }}>
+          {!error ? 'Your response has been recorded! Password successfully changed' : { errorMessage }}
         </Alert>
       </Snackbar>
-      <Box sx={{ mt: 10, minHeight: "60vh" }}>
+      <Box sx={{ mt: 10, minHeight: '60vh' }}>
         <Typography variant="h4" gutterBottom>
           Change Account Details
         </Typography>
@@ -94,9 +81,7 @@ const MyAccount = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.touched.oldPassword && !!formik.errors.oldPassword}
-              helperText={
-                formik.touched.oldPassword && formik.errors.oldPassword
-              }
+              helperText={formik.touched.oldPassword && formik.errors.oldPassword}
               name="oldPassword"
               fullWidth
             />
@@ -109,9 +94,7 @@ const MyAccount = () => {
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
               error={formik.touched.newPassword && !!formik.errors.newPassword}
-              helperText={
-                formik.touched.newPassword && formik.errors.newPassword
-              }
+              helperText={formik.touched.newPassword && formik.errors.newPassword}
               name="newPassword"
               fullWidth
             />
@@ -123,25 +106,13 @@ const MyAccount = () => {
               value={formik.values.confirmNewPassword}
               onChange={formik.handleChange}
               onBlur={formik.handleBlur}
-              error={
-                formik.touched.confirmNewPassword &&
-                !!formik.errors.confirmNewPassword
-              }
-              helperText={
-                formik.touched.confirmNewPassword &&
-                formik.errors.confirmNewPassword
-              }
+              error={formik.touched.confirmNewPassword && !!formik.errors.confirmNewPassword}
+              helperText={formik.touched.confirmNewPassword && formik.errors.confirmNewPassword}
               name="confirmNewPassword"
               fullWidth
             />
 
-            <Button
-              type="submit"
-              variant="contained"
-              color="primary"
-              fullWidth
-              sx={{ mt: 2 }}
-            >
+            <Button type="submit" variant="contained" color="primary" fullWidth sx={{ mt: 2 }}>
               Update Account
             </Button>
           </Stack>
