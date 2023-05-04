@@ -8,7 +8,7 @@ import Colleges from './components/colleges/Colleges';
 import College from './components/colleges/College';
 import { UserContextProvider } from './components/userContetx';
 import NotFound from './components/Error/NotFound';
-import StudentInfo from './components/StudentInfo/StudentInfo';
+import StudentInfo from './components/studentInfo/StudentInfo';
 import MyAccount from './components/myaccount/MyAccount';
 import AboutUs from './components/aboutUs/AboutUs';
 import ContactUs from './components/contactus/ContactUs';

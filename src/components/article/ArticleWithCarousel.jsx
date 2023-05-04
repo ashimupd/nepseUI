@@ -22,8 +22,8 @@ const ArticleWithCarousel = ({ title, imageList, content }) => {
       );
     } else {
       return (
-        <Typography variant="body1" sx={{ mb: 1 }}>
-          <div dangerouslySetInnerHTML={{ __html: contentItem }}></div>
+        <Typography component="div" variant="body1" sx={{ mb: 1 }}>
+          <p dangerouslySetInnerHTML={{ __html: contentItem }}></p>
         </Typography>
       );
     }
@@ -54,7 +54,7 @@ const ArticleWithCarousel = ({ title, imageList, content }) => {
 
 ArticleWithCarousel.propTypes = {
   title: PropTypes.string.isRequired,
-  imageList: PropTypes.string,
+  imageList: PropTypes.array,
   content: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)])).isRequired,
 };
 

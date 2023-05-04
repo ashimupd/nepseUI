@@ -6,8 +6,17 @@ import Alert from '@mui/material/Alert';
 import Snackbar from '@mui/material/Snackbar';
 import ArticleWithCarousel from '../article/ArticleWithCarousel';
 import { CheckCircle } from '@mui/icons-material';
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import { useNavigate } from 'react-router-dom';
+import { useUserContext } from '../userContetx';
 
 const College = () => {
+  const { userData: user } = useUserContext();
+  const navigate = useNavigate();
   const { id } = useParams();
   const [collegeData] = useState(() => {
     // This will be replaced by the actual API call
@@ -17,12 +26,16 @@ const College = () => {
   // eslint-disable-next-line no-unused-vars
   const [error, setError] = useState(false); //By default, it's false
   const [open, setOpen] = useState(false);
+  const [dialogOpen, setDialogOpen] = useState(false);
   const [applied, setApplied] = useState(false);
-  console.log(collegeData);
-  // console.log(mockUniDetailsData);
-  console.log(id);
 
   const handleApply = () => {
+    // Quite a bit of logic goes here,
+    // Check if the user has already filled the application form
+    if (!user.hasFilledApplication) {
+      setDialogOpen(true);
+      return;
+    }
     // call API to record user has applied.
     // Get userId from context
     setApplyFeedback(true);
@@ -40,10 +53,14 @@ const College = () => {
       return;
     }
   };
+  const handleDialogClose = () => {
+    setDialogOpen(false);
+    navigate('/application');
+  };
 
   return (
     <Container maxWidth="md" id={id}>
-      <ArticleWithCarousel title={collegeData?.title} imageList={collegeData?.images} content={collegeData?.content} />
+      <ArticleWithCarousel title={collegeData?.title ?? ''} imageList={collegeData?.images ?? ['']} content={collegeData?.content ?? ''} />
 
       <Box sx={{ mt: 3 }}>
         <Button variant="contained" color="primary" onClick={handleApply} startIcon={applied && showApplyFeedback && !error ? <CheckCircle /> : null} disabled={applied && showApplyFeedback && !error}>
@@ -58,6 +75,17 @@ const College = () => {
           </Alert>
         </Snackbar>
       </Box>
+      <Dialog open={dialogOpen} onClose={handleClose} aria-labelledby="responsive-dialog-title">
+        <DialogTitle id="responsive-dialog-title">{'Please provide us your details! '}</DialogTitle>
+        <DialogContent>
+          <DialogContentText>Hey! It looks like you haven{"'"}t filled our general application form. Please click below to fill up the form and comeback to the page again.</DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button autoFocus onClick={handleDialogClose}>
+            Fill Application
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Container>
   );
 };

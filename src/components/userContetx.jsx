@@ -14,6 +14,8 @@ export const UserContextProvider = ({ children }) => {
       lastName: 'Gautam',
       id: 1, // falsy value indicates not logged in, values other than falsy indicates loggedin user
       photo: null,
+      hasFilledApplication: false,
+      appliedUniversityIds: [],
     };
     setUserData(user);
   }, []);
