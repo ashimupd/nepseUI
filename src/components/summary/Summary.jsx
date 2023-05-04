@@ -15,7 +15,7 @@ const Summary = () => {
         <Grid item xs={12} md={6}>
           <Paper elevation={2} sx={{ p: 2 }}>
             <Typography variant="h6" gutterBottom>
-              University Selected
+              University Selected {`(${universities?.length})`}
             </Typography>
             {universities.map((university) => (
               <List key={university?.id}>
@@ -32,7 +32,7 @@ const Summary = () => {
         <Grid item xs={12} md={6}>
           <Paper elevation={2} sx={{ p: 2 }}>
             <Typography variant="h6" gutterBottom>
-              Services Selected
+              Services Selected {`(${services?.length})`}
             </Typography>
             <List>
               {services.map((service, index) => (

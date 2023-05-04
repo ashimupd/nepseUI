@@ -6,7 +6,7 @@ export const routes = [
     footer: false,
     header: true,
     profile: false,
-    protected: false,
+    protected: true,
   },
   {
     name: 'About us',
@@ -40,7 +40,7 @@ export const routes = [
     path: '/dashboard',
     key: 'dashboard',
     footer: false,
-    header: false,
+    header: true,
     profile: true,
     protected: true,
   },

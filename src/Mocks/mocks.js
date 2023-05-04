@@ -1,7 +1,10 @@
 import images from '../images/images';
-import BuildIcon from '@mui/icons-material/Build';
-import AutorenewIcon from '@mui/icons-material/Autorenew';
-import CloudIcon from '@mui/icons-material/Cloud';
+import AccessTimeFilledIcon from '@mui/icons-material/AccessTimeFilled';
+import ArticleIcon from '@mui/icons-material/Article';
+import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
+import BorderColorIcon from '@mui/icons-material/BorderColor';
+import GradingIcon from '@mui/icons-material/Grading';
+import WorkIcon from '@mui/icons-material/Work';
 export const universityList = [
   {
     id: '1',
@@ -55,14 +58,12 @@ export const universityList = [
 ];
 
 export const serviceList = [
-  { id: 1, name: 'Visa appointment', description: 'This is service 1', price: 10, icon: <BuildIcon /> },
-  { id: 2, name: 'DS-160 fill up', description: 'This is service 2', price: 20, icon: <AutorenewIcon /> },
-  { id: 3, name: 'Mock Interview', description: 'This is service 3', price: 30, icon: <CloudIcon /> },
-  { id: 4, name: 'Career Counseling', description: 'This is service 3', price: 30, icon: <CloudIcon /> },
-  { id: 5, name: 'Essay writing', description: 'This is service 1', price: 10, icon: <BuildIcon /> },
-  { id: 6, name: 'Resume Review', description: 'This is service 2', price: 20, icon: <AutorenewIcon /> },
-  { id: 7, name: 'Mock Interview', description: 'This is service 3', price: 30, icon: <CloudIcon /> },
-  { id: 8, name: 'Career Counseling', description: 'This is service 3', price: 30, icon: <CloudIcon /> },
+  { id: 1, name: 'Visa appointment', description: 'Application fee plus service charge', price: 200, icon: <AccessTimeFilledIcon color="primary" /> },
+  { id: 2, name: 'DS-160 fill up', description: 'We will fill up your DS-160 form', price: 20, icon: <ArticleIcon color="primary" /> },
+  { id: 3, name: 'Mock Interview', description: '30 min online visa interview and feedback', price: 30, icon: <VideoCameraFrontIcon color="primary" /> },
+  { id: 4, name: 'Career Counseling', description: 'Guidance on Major and career prospect', price: 30, icon: <WorkIcon color="primary" /> },
+  { id: 5, name: 'Essay writing', description: 'We will help you write college application essays', price: 50, icon: <BorderColorIcon color="primary" /> },
+  { id: 6, name: 'Resume Review', description: 'We will review you resume and suggest changes. Will help set up you linkedin', price: 30, icon: <GradingIcon color="primary" /> },
   // ... more services
 ];
 
