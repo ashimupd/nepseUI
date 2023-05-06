@@ -13,7 +13,7 @@ const Login = () => {
   };
 
   return (
-    <Container sx={{ height: '45rem', display: 'flex', alignItems: 'center' }}>
+    <Container sx={{ height: '70vh', display: 'flex', alignItems: 'center' }}>
       <Grid container justifyContent="center">
         <Grid item xs={12} sm={6} md={4}>
           <Box sx={{ textAlign: 'center' }}>

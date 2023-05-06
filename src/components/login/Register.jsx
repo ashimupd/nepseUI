@@ -19,7 +19,7 @@ const Register = () => {
   };
 
   return (
-    <Container sx={{ height: '100vh', display: 'flex', alignItems: 'center' }}>
+    <Container sx={{ height: '70vh', display: 'flex', alignItems: 'center' }}>
       {/* CSS reset */}
       <CssBaseline />
       <Box
