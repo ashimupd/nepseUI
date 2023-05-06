@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import CustomStepper from '../customStepper/CustomStepper';
 import CheckboxList from '../checkboxList/CheckboxList';
-import { School, Assignment, MenuBook, CheckCircle } from '@mui/icons-material';
+
 import { universityList, serviceList } from '../../Mocks/mocks';
 import StudentInfo from '../studentInfo/StudentInfo';
 import ServiceList from '../serviceList/ServiceList';
@@ -24,15 +24,15 @@ const HomePostLogin = () => {
   }, [univList]);
 
   const steps = [
-    { title: 'Choose University', icon: <School />, component: <CheckboxList checkboxData={universityList} title={'Choose University'} /> },
-    { title: 'Fill Application', icon: <Assignment />, component: <StudentInfo /> },
-    { title: 'Select Services', icon: <MenuBook />, component: <ServiceList services={serveList} title={'Our Services'} /> },
-    { title: 'Summary', icon: <CheckCircle />, component: <Summary /> },
+    { title: 'Choose University', icon: 'School', component: <CheckboxList checkboxData={universityList} title={'Choose University'} /> },
+    { title: 'Fill Application', icon: 'Assignment', component: <StudentInfo /> },
+    { title: 'Select Services', icon: 'MenuBook', component: <ServiceList services={serveList} title={'Our Services'} /> },
+    { title: 'Summary', icon: 'CheckCircle', component: <Summary /> },
   ];
 
   return (
     <HomePostLoginContextProvider>
-      <CustomStepper steps={steps} />;
+      <CustomStepper steps={steps} />
     </HomePostLoginContextProvider>
   );
 };

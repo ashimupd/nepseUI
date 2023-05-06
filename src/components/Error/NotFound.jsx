@@ -16,7 +16,7 @@ const NotFound = () => {
           404
         </Typography>
         <Typography variant="h4" gutterBottom>
-          We cannot Serve your request at the moment !
+          We Cannot Serve your Request at the Moment !
         </Typography>
         <Typography variant="subtitle1" color="textSecondary" sx={{ marginBottom: 4 }}>
           Please contact our support team or checkback again later !

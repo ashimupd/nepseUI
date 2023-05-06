@@ -48,7 +48,7 @@ const MyAccount = () => {
   });
 
   return (
-    <Container maxWidth="sm">
+    <Container maxWidth="xs">
       <Snackbar open={showFormSubmitFeedback} autoHideDuration={6000} onClose={handleClose}>
         <Alert onClose={handleClose} severity={error ? 'error' : 'success'} sx={{ width: '100%' }}>
           {!error ? 'Your response has been recorded! Password successfully changed' : { errorMessage }}

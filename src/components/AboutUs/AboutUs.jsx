@@ -125,10 +125,10 @@ const AboutUs = () => {
         </Typography>
         <Typography variant="body1" component="p" sx={{ mt: 1, lineHeight: 1.7 }}>
           At NepinUSA, we offer a comprehensive suite of services designed to streamline and simplify the journey of Nepalese students pursuing higher education in the United States. Our end-to-end
-          solutions encompass every stage of the application process, ensuring a seamless and stress-free experience for students and their families. Our services include College Selection, College
-          Application, Application Guidance, SAT Booking, and Visa Application. We are committed to leveraging cutting-edge technology and automation to transform the college application experience
-          for Nepalese students. Our goal is to make higher education in the United States accessible and attainable, enabling a new generation of global scholars to thrive and make a lasting impact
-          on the world.
+          solutions encompass every stage of the application process, ensuring a seamless and stress-free experience for students and their families. Our services include{' '}
+          <strong>College Selection, College Application, Application Guidance, SAT Booking, and Visa Application</strong>. We are committed to leveraging cutting-edge technology and automation to
+          transform the college application experience for Nepalese students. Our goal is to make higher education in the United States accessible and attainable, enabling a new generation of global
+          scholars to thrive and make a lasting impact on the world.
         </Typography>
         <Box>
           <List sx={{ mt: 2 }}>

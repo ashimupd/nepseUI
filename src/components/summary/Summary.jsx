@@ -1,15 +1,20 @@
 import React from 'react';
 import { Box, Grid, Paper, Typography, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import PropTypes from 'prop-types';
 import { School, CheckCircle } from '@mui/icons-material';
 import { useHomePageContext } from '../home/HomePostLoginContext';
 
-const Summary = () => {
-  const { userUniSelection: universities, userServiceSelection: services } = useHomePageContext();
+const Summary = ({ title, universityList, servicList }) => {
+  const { userUniSelection, userServiceSelection } = useHomePageContext() || {};
+
+  const universities = universityList != null ? universityList : userUniSelection;
+  const services = servicList != null ? servicList : userServiceSelection;
+
   // const [totalPrice, setTotalPirce] = useState(0);
   return (
     <Box mb={8}>
       <Typography variant="h5" gutterBottom>
-        Summary
+        {title}
       </Typography>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
@@ -17,13 +22,13 @@ const Summary = () => {
             <Typography variant="h6" gutterBottom>
               University Selected {`(${universities?.length})`}
             </Typography>
-            {universities.map((university) => (
+            {universities?.map((university) => (
               <List key={university?.id}>
                 <ListItem>
                   <ListItemIcon>
                     <School />
                   </ListItemIcon>
-                  <ListItemText primary={university?.title} />
+                  <ListItemText primary={university?.title || university?.name} />
                 </ListItem>
               </List>
             ))}
@@ -35,7 +40,7 @@ const Summary = () => {
               Services Selected {`(${services?.length})`}
             </Typography>
             <List>
-              {services.map((service, index) => (
+              {services?.map((service, index) => (
                 <ListItem key={index}>
                   <ListItemIcon>
                     <CheckCircle />
@@ -59,5 +64,13 @@ const Summary = () => {
     </Box>
   );
 };
+Summary.propTypes = {
+  title: PropTypes.string,
+  universityList: PropTypes.array,
+  servicList: PropTypes.array,
+};
 
+Summary.defaultProps = {
+  title: 'Summary',
+};
 export default Summary;

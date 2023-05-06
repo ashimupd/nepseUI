@@ -5,6 +5,7 @@ import VideoCameraFrontIcon from '@mui/icons-material/VideoCameraFront';
 import BorderColorIcon from '@mui/icons-material/BorderColor';
 import GradingIcon from '@mui/icons-material/Grading';
 import WorkIcon from '@mui/icons-material/Work';
+import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 export const universityList = [
   {
     id: '1',
@@ -64,7 +65,7 @@ export const serviceList = [
   { id: 4, name: 'Career Counseling', description: 'Guidance on Major and career prospect', price: 30, icon: <WorkIcon color="primary" /> },
   { id: 5, name: 'Essay writing', description: 'We will help you write college application essays', price: 50, icon: <BorderColorIcon color="primary" /> },
   { id: 6, name: 'Resume Review', description: 'We will review you resume and suggest changes. Will help set up you linkedin', price: 30, icon: <GradingIcon color="primary" /> },
-  // ... more services
+  { id: 6, name: 'Express I20 Delivery', description: 'We will provide express delivery of all of your acceptance document', price: 100, icon: <LocalShippingIcon color="primary" /> },
 ];
 
 export const mockUniDetailsData = {

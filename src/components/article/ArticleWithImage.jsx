@@ -8,7 +8,7 @@ const ArticleWithImage = ({ title, image, content }) => {
     if (Array.isArray(contentItem)) {
       return (
         <List>
-          {contentItem.map((item, index) => (
+          {contentItem?.map((item, index) => (
             <ListItem key={index}>
               <ListItemIcon>
                 <CheckCircle />
@@ -34,7 +34,7 @@ const ArticleWithImage = ({ title, image, content }) => {
         <Typography color="primary.main" variant="h4" sx={{ mb: 1 }}>
           {title}
         </Typography>
-        {content.map((contentItem, index) => (
+        {content?.map((contentItem, index) => (
           <React.Fragment key={index}>{renderContent(contentItem)}</React.Fragment>
         ))}
       </Box>
@@ -44,7 +44,7 @@ const ArticleWithImage = ({ title, image, content }) => {
 
 ArticleWithImage.propTypes = {
   title: PropTypes.string.isRequired,
-  image: PropTypes.string.isRequired,
+  image: PropTypes.string,
   content: PropTypes.arrayOf(PropTypes.oneOfType([PropTypes.string, PropTypes.arrayOf(PropTypes.string)])).isRequired,
 };
 

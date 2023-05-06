@@ -13,6 +13,9 @@ import MyAccount from './components/myaccount/MyAccount';
 import AboutUs from './components/aboutUs/AboutUs';
 import ContactUs from './components/contactus/ContactUs';
 import Blog from './components/blog/Blog';
+import Visa from './components/visa/visa';
+import Dashboard from './components/dashboard/Dashboard';
+import ForgotPassword from './components/forgotpassword/ForgotPassword';
 
 function App() {
   return (
@@ -21,6 +24,7 @@ function App() {
         <Header>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/home" element={<Home />} />
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
@@ -32,6 +36,8 @@ function App() {
             <Route path="/aboutus" element={<AboutUs />} />
             <Route path="/contact" element={<ContactUs />} />
             <Route path="/blog" element={<Blog />} />
+            <Route path="/visa" element={<Visa />} />
+            <Route path="/forget-password" element={<ForgotPassword />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Header>

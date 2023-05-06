@@ -57,14 +57,19 @@ export default function Colleges() {
   }, []);
 
   return (
-    <Grid container spacing={2}>
-      {collegeList.length > 1 &&
-        collegeList?.map(({ id, name, image, description }) => (
-          <Grid key={id} item xs={12} md={6} lg={4}>
-            <CollegePreview id={id} name={name} image={image} description={description} />
-          </Grid>
-        ))}
-    </Grid>
+    <>
+      <Typography variant="h4" gutterBottom>
+        Colleges
+      </Typography>
+      <Grid container spacing={2}>
+        {collegeList.length > 1 &&
+          collegeList?.map(({ id, name, image, description }) => (
+            <Grid key={id} item xs={12} md={6} lg={4}>
+              <CollegePreview id={id} name={name} image={image} description={description} />
+            </Grid>
+          ))}
+      </Grid>
+    </>
   );
 }
 

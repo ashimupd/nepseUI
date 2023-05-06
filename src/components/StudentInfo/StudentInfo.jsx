@@ -50,6 +50,7 @@ const StudentInfo = () => {
       zipCode: '',
       mobilePhoneNumber: '',
       birthDate: '',
+      resume: '',
     },
     validationSchema,
     onSubmit: (values) => {
@@ -73,7 +74,7 @@ const StudentInfo = () => {
       </Snackbar>
       <Box component="form" onSubmit={formik.handleSubmit}>
         <Typography variant="h4" gutterBottom>
-          Student Details
+          Application
         </Typography>
         <FormControl fullWidth sx={{ marginBottom: 2 }}>
           <TextField
@@ -166,6 +167,12 @@ const StudentInfo = () => {
           <TextField label="High School Transcripts" type="file" InputLabelProps={{ shrink: true }} name="transcripts" onChange={formik.handleChange} />
           <Typography variant="caption" color="textSecondary">
             The file should be a single PDF that contains transcripts from class 10, 11, and 12.
+          </Typography>
+        </FormControl>
+        <FormControl fullWidth sx={{ marginBottom: 2 }}>
+          <TextField label="Resume, CV and other docs" type="file" multiple InputLabelProps={{ shrink: true }} name="resume" onChange={formik.handleChange} />
+          <Typography variant="caption" color="textSecondary">
+            Please upload your Resume, CV and other docs. Should be uploaded in one single pdf.
           </Typography>
         </FormControl>
         <Button variant="contained" type="submit">
