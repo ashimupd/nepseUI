@@ -9,7 +9,7 @@ import { useUserContext } from '../userContetx';
 const Home = () => {
   const { userData: user } = useUserContext();
 
-  return <>{user.id <= 0 ? <HomePreLogin /> : <HomePostLogin />}</>;
+  return <>{user?.id > 0 ? <HomePostLogin /> : <HomePreLogin />}</>;
 };
 
 export default Home;

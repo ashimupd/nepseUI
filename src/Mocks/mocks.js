@@ -23,35 +23,35 @@ export const universityList = [
   },
   {
     id: '3',
-    name: 'Gulla state University',
+    name: 'Missouri state University',
     image: images?.ryle1,
     description:
       'St. Cloud State University is a public university located in St. Cloud, Minnesota, USA. It was founded in 1869 and has a current enrollment of approximately 14,000 undergraduate and graduate students. The university offers more than 200 undergraduate and graduate programs across a variety of fields, including education, business, science, and the arts.',
   },
   {
     id: '4',
-    name: 'Thulo cloud state University',
+    name: 'Washington state University',
     image: images?.ryle2,
     description:
       'St. Cloud State University is a public university located in St. Cloud, Minnesota, USA. It was founded in 1869 and has a current enrollment of approximately 14,000 undergraduate and graduate students. The university offers more than 200 undergraduate and graduate programs across a variety of fields, including education, business, science, and the arts.',
   },
   {
     id: '5',
-    name: 'Sano cloud state University',
+    name: 'North-West state University',
     image: images?.ryle3,
     description:
       'St. Cloud State University is a public university located in St. Cloud, Minnesota, USA. It was founded in 1869 and has a current enrollment of approximately 14,000 undergraduate and graduate students. The university offers more than 200 undergraduate and graduate programs across a variety of fields, including education, business, science, and the arts.',
   },
   {
     id: '6',
-    name: 'Hyabusa cloud state University',
+    name: 'Arkansas state University',
     image: images?.stokes1,
     description:
       'St. Cloud State University is a public university located in St. Cloud, Minnesota, USA. It was founded in 1869 and has a current enrollment of approximately 14,000 undergraduate and graduate students. The university offers more than 200 undergraduate and graduate programs across a variety of fields, including education, business, science, and the arts.',
   },
   {
     id: '7',
-    name: 'Sarakushi state University',
+    name: 'Chico state University',
     image: images?.stokes2,
     description:
       'St. Cloud State University is a public university located in St. Cloud, Minnesota, USA. It was founded in 1869 and has a current enrollment of approximately 14,000 undergraduate and graduate students. The university offers more than 200 undergraduate and graduate programs across a variety of fields, including education, business, science, and the arts.',
