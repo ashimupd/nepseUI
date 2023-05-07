@@ -74,7 +74,7 @@ const StudentInfo = () => {
       </Snackbar>
       <Box component="form" onSubmit={formik.handleSubmit}>
         <Typography variant="h4" gutterBottom>
-          Application
+          My Details
         </Typography>
         <FormControl fullWidth sx={{ marginBottom: 2 }}>
           <TextField

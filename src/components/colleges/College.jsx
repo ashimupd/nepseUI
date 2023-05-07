@@ -40,7 +40,7 @@ const College = () => {
     // Get userId from context
     setApplyFeedback(true);
     // If error set Error to true
-    //setError(true);
+    // setError(true);
 
     setOpen(true);
     setTimeout(() => {
