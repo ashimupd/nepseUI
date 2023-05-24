@@ -98,7 +98,6 @@ Gather the following documents for your visa interview:
 7. Academic transcripts and diplomas
 8. Proof of English language proficiency
 -------------------------------------------------------------------------------------------
-That's a very specific request. I did some web searches and found some possible options for you. Here is a list of 10 public universities in the US with rolling admissions, total cost for international students being less than 20000 per year, and accepts with or without SAT. The costs are estimates and may vary depending on your situation. You should check the websites of each university for more details.
 
 | University | Location | Cost | SAT Policy | Website |
 | --- | --- | --- | --- | --- |
@@ -123,6 +122,9 @@ That's a very specific request. I did some web searches and found some possible 
 | University of New Mexico	$19,798	http://www.unm.edu/
 | University of Maine Presque Isle	$19,890	https://www.umpi.edu/
 
+
+Work cited
+----
 (1) Truman State University. https://truman.edu/.
 (2) Pittsburg State University. http://www.pittstate.edu/.
 (3) 10 Excellent Colleges with Rolling Admission - College Transitions. https://www.collegetransitions.com/blog/10-excellent-colleges-with-rolling-admissions/.
