@@ -1,15 +1,16 @@
 import React, { useState } from 'react';
 import { Avatar, Box, Button, Checkbox, Container, FormControlLabel, Grid, Link, TextField, Typography } from '@mui/material';
 import { Link as routerLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
-const Login = () => {
+const Login = ({ userType }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // handle login logic here
+    console.log(userType); // send user type to distinguish between admin or user
   };
 
   return (
@@ -75,3 +76,6 @@ const Login = () => {
 };
 
 export default Login;
+Login.propTypes = {
+  userType: PropTypes.string.isRequired,
+};

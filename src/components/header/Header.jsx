@@ -16,15 +16,16 @@ import ProfileDropdown from './ProfileDropdown';
 import LoginRegisterButtons from '../login/Buttons';
 import { useUserContext } from '../userContetx';
 
-const preLoginPages = routes.filter((route) => route.header && !route.protected);
-const postLoginPages = routes.filter((route) => route.header && route.protected);
+const preLoginPages = routes.filter((route) => route?.header && !route?.protected);
+const postLoginPages = routes.filter((route) => route?.header && route?.protected);
+const postLoginAdminPages = routes.filter((route) => route?.header && route?.protected && route?.isAdminPage);
 
 // eslint-disable-next-line react/prop-types
 function Header({ children }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const { userData: user } = useUserContext();
 
-  const pages = user?.id ? postLoginPages : preLoginPages;
+  const pages = user?.isAdmin ? postLoginAdminPages : user?.id > 0 ? postLoginPages : preLoginPages;
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);

@@ -7,6 +7,7 @@ export const routes = [
     header: true,
     profile: false,
     protected: true,
+    isAdminPage: true,
   },
   {
     name: 'About us',
@@ -16,6 +17,16 @@ export const routes = [
     header: true,
     profile: false,
     protected: false,
+  },
+  {
+    name: 'Students',
+    path: '/student',
+    key: 'students',
+    footer: false,
+    header: false,
+    profile: false,
+    protected: true,
+    isAdminPage: true,
   },
   {
     name: 'Contact',
@@ -61,6 +72,7 @@ export const routes = [
     header: true,
     profile: false,
     protected: true,
+    isAdminPage: true,
   },
   {
     name: 'Application',

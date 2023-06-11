@@ -4,8 +4,9 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import PersonIcon from '@mui/icons-material/Person';
 import MailIcon from '@mui/icons-material/Mail';
 import LockIcon from '@mui/icons-material/Lock';
+import PropTypes from 'prop-types';
 
-const Register = () => {
+const Register = ({ userType }) => {
   // state to keep track of input values
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
@@ -16,6 +17,7 @@ const Register = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     // handle register logic here
+    console.log(userType); // when registering for a user, gotta let the BE know if the current user is a admin or student
   };
 
   return (
@@ -143,6 +145,9 @@ const Register = () => {
       </Box>
     </Container>
   );
+};
+Register.propTypes = {
+  userType: PropTypes.string.isRequired,
 };
 
 export default Register;

@@ -16,6 +16,7 @@ import Blog from './components/blog/Blog';
 import Visa from './components/visa/visa';
 import Dashboard from './components/dashboard/Dashboard';
 import ForgotPassword from './components/forgotpassword/ForgotPassword';
+import StudentProfilePage from './components/student/StudentProfilePage';
 
 function App() {
   return (
@@ -26,8 +27,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/home" element={<Home />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
+            <Route path="/login" element={<Login userType="student" />} />
+            <Route path="/register" element={<Register userType="student" />} />
             <Route path="/colleges" element={<Colleges />} />
             <Route path="/colleges/:id" element={<College />} />
             <Route path="/error" element={<NotFound />} />
@@ -38,6 +39,9 @@ function App() {
             <Route path="/blog" element={<Blog />} />
             <Route path="/visa" element={<Visa />} />
             <Route path="/forget-password" element={<ForgotPassword />} />
+            <Route path="/admin/login" element={<Login userType="admin" />} />
+            <Route path="/admin/register" element={<Register userType="admin" />} />
+            <Route path="/student:id" element={<StudentProfilePage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Header>

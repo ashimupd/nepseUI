@@ -77,3 +77,42 @@ export const mockUniDetailsData = {
     'In this blog, I will outline the general steps for applying to most average U.S. universities. Applying to top-tier universities is more complex and will be covered in a separate series.',
   ],
 };
+export const StudentdummyData = {
+  personalInfo: {
+    firstName: 'John',
+    lastName: 'Doe',
+    gender: 'Male',
+    dateOfBirth: '2000-01-01',
+    profilePicture: null,
+  },
+  contactInfo: {
+    email: 'john.doe@example.com',
+    mobile: '123-456-7890',
+  },
+  addressDetails: {
+    street: '123 Main St',
+    city: 'Springfield',
+    province: 'IL',
+    zip: '62704',
+  },
+  applicationDetails: {
+    graduationDate: '2022-05-20',
+    gpa: '3.5',
+    highSchoolMajor: 'Science',
+    intendedMajor: 'Computer Science',
+    secondMajor: 'Math',
+  },
+  files: [
+    { name: 'Passport.pdf', url: 'path/to/passport.pdf' },
+    { name: 'Transcript.pdf', url: 'path/to/transcript.pdf' },
+  ],
+  universitySelected: [
+    { name: 'MIT', url: 'https://www.mit.edu', status: 'Applied' },
+    { name: 'Stanford', url: 'https://www.stanford.edu', status: 'None' },
+  ],
+  servicesSelected: [
+    { name: 'Visa Appointment', description: 'Assistance with scheduling visa appointment.', completed: true },
+    { name: 'DS-160', description: 'Help filling DS-160 form.', completed: false },
+  ],
+  notes: [{ id: 1, content: 'Need to verify transcript.' }],
+};

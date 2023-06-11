@@ -75,8 +75,8 @@ function Footer() {
         >
           {footerLinks.map((link, index) => (
             <>
-              <Link key={link.key} component={RouterLink} to={link.path} style={linkStyle}>
-                {link.name}
+              <Link key={link?.key} component={RouterLink} to={link?.path} style={linkStyle}>
+                {link?.name}
               </Link>
               {index !== footerLinks.length - 1 && <Divider orientation="vertical" flexItem />}
             </>
