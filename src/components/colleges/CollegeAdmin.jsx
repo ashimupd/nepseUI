@@ -44,6 +44,11 @@ const AddSectionModal = ({ onSectionAdded }) => {
   };
 
   const handleModalClose = () => {
+    setContent('');
+    setDescription([]);
+    setCollegeId('');
+    setImageFiles([]);
+    setTitle('');
     setOpen(false);
   };
 
@@ -114,11 +119,14 @@ const AddSectionModal = ({ onSectionAdded }) => {
             </Select>
           </FormControl>
           <TextField label="Content" fullWidth multiline rows={contentType === 'bullet' ? 1 : 4} sx={{ mb: 2 }} value={content} onChange={(e) => setContent(e.target.value)} />
-          <Button onClick={handleAddContent} variant="contained" sx={{ mb: 2 }}>
+          <Button disabled={!title || !content} onClick={handleAddContent} variant="contained" sx={{ mb: 1 }}>
             Add Content
           </Button>
+          <Typography variant="subtitle" display={!title || !content ? 'block' : 'none'} sx={{ color: 'red', mb: 2 }}>
+            Fill the Title and content
+          </Typography>
           <Input type="file" fullWidth multiple sx={{ mb: 4 }} onChange={(e) => setImageFiles([...imageFiles, ...e.target.files])} />
-          <Button onClick={handleOK} variant="contained" sx={{ mr: 2, my: 2 }}>
+          <Button disabled={!description.length} onClick={handleOK} variant="contained" sx={{ mr: 2, my: 2 }}>
             OK
           </Button>
           <Button onClick={handleModalClose} variant="contained">
@@ -126,18 +134,20 @@ const AddSectionModal = ({ onSectionAdded }) => {
           </Button>
           {description.map((desc, index) => (
             <Box key={index} sx={{ p: 2, my: 2, border: '1px solid #ccc', borderRadius: '4px' }}>
-              <Typography key={index}>{Array.isArray(desc) ? `- ${desc}` : desc}</Typography>
+              <Typography sx={{ overflowWrap: 'break-word' }} key={index}>
+                {Array.isArray(desc) ? `- ${desc}` : desc}
+              </Typography>
             </Box>
           ))}
         </Box>
       </Modal>
-      {sections.map((section, index) => (
+      {sections?.map((section, index) => (
         <Box key={index} sx={{ p: 2, my: 2, border: '1px solid #ccc', borderRadius: '4px' }}>
           <Typography gutterBottom variant="h6">
             {section?.title}
           </Typography>
-          {section.description.map((desc, descIndex) => (
-            <Typography gutterBottom key={descIndex}>
+          {section?.description?.map((desc, descIndex) => (
+            <Typography sx={{ overflowWrap: 'break-word' }} gutterBottom key={descIndex}>
               {Array.isArray(desc) ? `- ${desc}` : desc}
             </Typography>
           ))}

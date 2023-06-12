@@ -10,7 +10,7 @@ import { useUserContext } from '../userContetx';
 const College = () => {
   const { id } = useParams();
   const { userData: user } = useUserContext();
-  const collegeToDisplay = user?.isAdmin ? <CollegeAdmin id={id} /> : <CollegeStudentView id={id} />;
+  const collegeToDisplay = user?.isAdmin ? <CollegeAdmin /> : <CollegeStudentView id={id} />;
 
   return <>{collegeToDisplay}</>;
 };
