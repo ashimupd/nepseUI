@@ -12,11 +12,11 @@ const NotifyStudent = () => {
   const [message, setMessage] = useState('');
   const [severity, setSeverity] = useState('info');
   const [sentMessages, setSentMessages] = useState([]);
-
   const handleSend = () => {
     // Make API call to send notification
     // After sending, add the message to the sentMessages list
     setSentMessages([...sentMessages, { message, severity }]);
+    setMessage('');
   };
 
   const handleDeleteMessage = (index) => {

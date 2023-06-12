@@ -26,9 +26,7 @@ const FilesSection = ({ data }) => {
 };
 
 FilesSection.propTypes = {
-  data: PropTypes.shape({
-    map: PropTypes.func,
-  }),
+  data: PropTypes.array,
 };
 
 export default FilesSection;

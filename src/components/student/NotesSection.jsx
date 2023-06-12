@@ -51,7 +51,7 @@ const Note = ({ data, onUpdate }) => {
       </Box>
       <Box sx={{ mt: 2, flexWrap: 'wrap', display: 'flex' }}>
         {data.map((note) => (
-          <Chip key={note.id} label={note.content} onDelete={() => handleDeleteNote(note.id)} deleteIcon={<DeleteIcon />} sx={{ mt: 1, mr: 1 }} />
+          <Chip key={note.id} label={note?.content} onDelete={() => handleDeleteNote(note.id)} deleteIcon={<DeleteIcon />} sx={{ mt: 1, mr: 1 }} />
         ))}
       </Box>
     </Box>
@@ -59,20 +59,7 @@ const Note = ({ data, onUpdate }) => {
 };
 
 Note.propTypes = {
-  data: PropTypes.shape({
-    filter: PropTypes.func,
-    map: PropTypes.func,
-  }),
-  onUpdate: PropTypes.func,
-};
-
-NotesSection.propTypes = {
-  data: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      content: PropTypes.string,
-    })
-  ),
+  data: PropTypes.array,
   onUpdate: PropTypes.func,
 };
 

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import Skeleton from '@mui/material/Skeleton';
 import Grid from '@mui/material/Grid';
 import PersonalInfo from './PersonalInfo';
 import ContactInfo from './ContactInfo';
@@ -25,7 +26,7 @@ const StudentProfilePage = () => {
   }, [studentId]);
 
   if (!studentData) {
-    return <div>Loading...</div>;
+    return <Skeleton width="100%" height="100vh" />;
   }
 
   return (

@@ -34,9 +34,7 @@ const ServicesSelected = ({ data }) => {
 };
 
 ServicesSelected.propTypes = {
-  data: PropTypes.shape({
-    map: PropTypes.func,
-  }),
+  data: PropTypes.array,
 };
 
 export default ServicesSelected;
