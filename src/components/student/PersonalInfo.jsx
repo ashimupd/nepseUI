@@ -11,11 +11,21 @@ const PersonalInfo = ({ data }) => {
       <Box sx={{ display: 'flex', alignItems: 'center' }}>
         {data?.profilePicture ? <img src={data?.profilePicture} alt="Profile" style={{ height: '100px', marginRight: '20px' }} /> : <Avatar sx={{ height: 100, width: 100, marginRight: 2 }}>A</Avatar>}
         <div>
-          <Typography variant="h6">Personal Info</Typography>
-          <Typography>Legal First Name: {data?.legalFirstName}</Typography>
-          <Typography>Legal Last Name: {data?.legalLastName}</Typography>
-          <Typography>Gender: {data?.gender}</Typography>
-          <Typography>Date of Birth: {data?.dob}</Typography>
+          <Typography pb={1} variant="h6">
+            Personal Info
+          </Typography>
+          <Typography>
+            <strong>Legal First Name: </strong> {data?.firstName}
+          </Typography>
+          <Typography>
+            <strong>Legal Last Name:</strong> {data?.lastName}
+          </Typography>
+          <Typography>
+            <strong>Gender: </strong> {data?.gender}
+          </Typography>
+          <Typography>
+            <strong>Date of Birth: </strong> {data?.dateOfBirth}
+          </Typography>
         </div>
       </Box>
     </Box>
@@ -24,10 +34,10 @@ const PersonalInfo = ({ data }) => {
 
 PersonalInfo.propTypes = {
   data: PropTypes.shape({
-    dob: PropTypes.string,
+    dateOfBirth: PropTypes.string,
     gender: PropTypes.string,
-    legalFirstName: PropTypes.string,
-    legalLastName: PropTypes.string,
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
     profilePicture: PropTypes.string,
   }),
 };

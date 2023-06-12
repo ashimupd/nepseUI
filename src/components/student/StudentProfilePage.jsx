@@ -10,7 +10,7 @@ import UniversitySelected from './UniversitySelected';
 import ServicesSelected from './ServicesSelected';
 import NotesSection from './NotesSection';
 import NotifyStudent from './NotifyStudent';
-import { StudentdummyData as dummyData } from '../../Mocks/mocks';
+import { studentDummyData } from '../../Mocks/mocks';
 
 const StudentProfilePage = () => {
   const { studentId } = useParams();
@@ -21,7 +21,7 @@ const StudentProfilePage = () => {
     // And then set the data to state
     // const data = fetchData(studentId);
     console.log(studentId);
-    setStudentData(dummyData);
+    setStudentData(studentDummyData);
   }, [studentId]);
 
   if (!studentData) {
@@ -32,28 +32,28 @@ const StudentProfilePage = () => {
     <div>
       <Grid container spacing={2}>
         <Grid item xs={12} md={6}>
-          <PersonalInfo data={studentData.personalInfo} />
+          <PersonalInfo data={studentData?.personalInfo} />
         </Grid>
         <Grid item xs={12} md={6}>
-          <ContactInfo data={studentData.contactInfo} />
+          <ContactInfo data={studentData?.contactInfo} />
         </Grid>
         <Grid item xs={12} md={6}>
-          <AddressDetails data={studentData.addressDetails} />
+          <AddressDetails data={studentData?.addressDetails} />
         </Grid>
         <Grid item xs={12} md={6}>
-          <ApplicationDetails data={studentData.applicationDetails} />
+          <ApplicationDetails data={studentData?.applicationDetails} />
         </Grid>
         <Grid item xs={12} md={6}>
-          <FilesSection data={studentData.files} />
+          <FilesSection data={studentData?.files} />
         </Grid>
         <Grid item xs={12} md={6}>
-          <UniversitySelected data={studentData.universitySelected} />
+          <UniversitySelected data={studentData?.universitySelected} />
         </Grid>
         <Grid item xs={12} md={6}>
-          <ServicesSelected data={studentData.servicesSelected} />
+          <ServicesSelected data={studentData?.servicesSelected} />
         </Grid>
         <Grid item xs={12} md={6}>
-          <NotesSection data={studentData.notes} />
+          <NotesSection />
         </Grid>
         <Grid item xs={12} md={6}>
           <NotifyStudent />

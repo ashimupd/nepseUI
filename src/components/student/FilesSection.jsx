@@ -9,7 +9,9 @@ import OpenInNewIcon from '@mui/icons-material/OpenInNew';
 const FilesSection = ({ data }) => {
   return (
     <Box sx={{ p: 2, my: 2, border: '1px solid #ccc', borderRadius: '4px' }}>
-      <Typography variant="h6">Files</Typography>
+      <Typography pb={1} variant="h6">
+        Files
+      </Typography>
       {data.map((file, index) => (
         <Box key={index} sx={{ display: 'flex', alignItems: 'center', mb: 1 }}>
           <PictureAsPdfIcon sx={{ mr: 1 }} />

@@ -17,6 +17,8 @@ import Visa from './components/visa/visa';
 import Dashboard from './components/dashboard/Dashboard';
 import ForgotPassword from './components/forgotpassword/ForgotPassword';
 import StudentProfilePage from './components/student/StudentProfilePage';
+// eslint-disable-next-line no-unused-vars
+import FacebookChat from './components/facebookChat/FacebookChat';
 
 function App() {
   return (
@@ -41,7 +43,7 @@ function App() {
             <Route path="/forget-password" element={<ForgotPassword />} />
             <Route path="/admin/login" element={<Login userType="admin" />} />
             <Route path="/admin/register" element={<Register userType="admin" />} />
-            <Route path="/student:id" element={<StudentProfilePage />} />
+            <Route path="/student/:studentId" element={<StudentProfilePage />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Header>

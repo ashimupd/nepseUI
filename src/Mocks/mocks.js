@@ -77,7 +77,7 @@ export const mockUniDetailsData = {
     'In this blog, I will outline the general steps for applying to most average U.S. universities. Applying to top-tier universities is more complex and will be covered in a separate series.',
   ],
 };
-export const StudentdummyData = {
+export const studentDummyData = {
   personalInfo: {
     firstName: 'John',
     lastName: 'Doe',
@@ -99,8 +99,8 @@ export const StudentdummyData = {
     graduationDate: '2022-05-20',
     gpa: '3.5',
     highSchoolMajor: 'Science',
-    intendedMajor: 'Computer Science',
-    secondMajor: 'Math',
+    intendedFirstMajor: 'Computer Science',
+    intendedSecondMajor: 'Math',
   },
   files: [
     { name: 'Passport.pdf', url: 'path/to/passport.pdf' },
@@ -114,5 +114,4 @@ export const StudentdummyData = {
     { name: 'Visa Appointment', description: 'Assistance with scheduling visa appointment.', completed: true },
     { name: 'DS-160', description: 'Help filling DS-160 form.', completed: false },
   ],
-  notes: [{ id: 1, content: 'Need to verify transcript.' }],
 };

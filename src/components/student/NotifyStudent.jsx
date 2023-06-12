@@ -6,6 +6,7 @@ import TextField from '@mui/material/TextField';
 import Select from '@mui/material/Select';
 import MenuItem from '@mui/material/MenuItem';
 import Chip from '@mui/material/Chip';
+import SendIcon from '@mui/icons-material/Send';
 
 const NotifyStudent = () => {
   const [message, setMessage] = useState('');
@@ -26,15 +27,17 @@ const NotifyStudent = () => {
 
   return (
     <Box sx={{ p: 2, my: 2, border: '1px solid #ccc', borderRadius: '4px' }}>
-      <Typography variant="h6">Notify Student</Typography>
-      <TextField value={message} onChange={(e) => setMessage(e.target.value)} multiline rows={3} fullWidth />
-      <Select value={severity} onChange={(e) => setSeverity(e.target.value)} sx={{ ml: 2 }}>
+      <Typography pb={1} variant="h6">
+        Notify Student
+      </Typography>
+      <TextField sx={{ pb: 1 }} value={message} onChange={(e) => setMessage(e.target.value)} multiline rows={3} fullWidth />
+      <Select value={severity} onChange={(e) => setSeverity(e.target.value)}>
         <MenuItem value={'info'}>Info</MenuItem>
         <MenuItem value={'warning'}>Warning</MenuItem>
         <MenuItem value={'error'}>Error</MenuItem>
         <MenuItem value={'success'}>Success</MenuItem>
       </Select>
-      <Button onClick={handleSend} sx={{ ml: 2 }}>
+      <Button variant="contained" onClick={handleSend} endIcon={<SendIcon />} sx={{ ml: 2 }}>
         Send
       </Button>
 

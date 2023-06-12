@@ -67,6 +67,15 @@ export const routes = [
   {
     name: 'Colleges',
     path: '/colleges',
+    key: 'colleges',
+    footer: false,
+    header: true,
+    profile: false,
+    protected: true,
+  },
+  {
+    name: 'College',
+    path: '/colleges/add',
     key: 'college',
     footer: false,
     header: true,

@@ -25,7 +25,7 @@ function Header({ children }) {
   const [anchorElNav, setAnchorElNav] = useState(null);
   const { userData: user } = useUserContext();
 
-  const pages = user?.isAdmin ? postLoginAdminPages : user?.id > 0 ? postLoginPages : preLoginPages;
+  const pages = user?.id > 0 ? (user?.isAdmin ? postLoginAdminPages : postLoginPages) : preLoginPages;
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);

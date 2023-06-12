@@ -9,26 +9,28 @@ import TrendingUpIcon from '@mui/icons-material/TrendingUp';
 const ApplicationDetails = ({ data }) => {
   return (
     <Box sx={{ p: 2, my: 2, border: '1px solid #ccc', borderRadius: '4px' }}>
-      <Typography variant="h6">Application Details</Typography>
-      <Typography sx={{ display: 'flex', alignItems: 'center' }}>
+      <Typography pb={2} variant="h6">
+        Application Details
+      </Typography>
+      <Typography>
         <CalendarTodayIcon sx={{ mr: 1 }} />
-        High School Graduation Date: {data.graduationDate}
+        <strong>High School Graduation Date:</strong> {data?.graduationDate}
       </Typography>
-      <Typography sx={{ display: 'flex', alignItems: 'center' }}>
+      <Typography>
         <TrendingUpIcon sx={{ mr: 1 }} />
-        High School GPA: {data.gpa}
+        <strong>High School GPA: </strong> {''} {data?.gpa}
       </Typography>
-      <Typography sx={{ display: 'flex', alignItems: 'center' }}>
+      <Typography>
         <SchoolIcon sx={{ mr: 1 }} />
-        High School Major: {data.highSchoolMajor}
+        <strong>High School Major: </strong> {data?.highSchoolMajor}
       </Typography>
-      <Typography sx={{ display: 'flex', alignItems: 'center' }}>
+      <Typography>
         <SchoolIcon sx={{ mr: 1 }} />
-        Intended University First Major: {data.intendedFirstMajor}
+        <strong>Intended University First Major: </strong> {data?.intendedFirstMajor}
       </Typography>
-      <Typography sx={{ display: 'flex', alignItems: 'center' }}>
+      <Typography>
         <SchoolIcon sx={{ mr: 1 }} />
-        Intended University Second Major: {data.intendedSecondMajor}
+        <strong>Intended University Second Major: </strong> {data?.intendedSecondMajor}
       </Typography>
     </Box>
   );

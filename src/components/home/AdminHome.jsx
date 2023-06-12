@@ -1,7 +1,9 @@
 import React, { useState, useCallback, useMemo } from 'react';
 import { Link } from 'react-router-dom';
+import { Link as hrefLink } from '@mui/material';
 import { DataGrid } from '@mui/x-data-grid';
 import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
 import Box from '@mui/material/Box';
 
 const columns = [
@@ -35,9 +37,9 @@ const columns = [
     renderCell: (params) => (
       <div>
         {params.value.map((uni, index) => (
-          <Link key={index} to={`/admin/college/${uni?.id}`} style={{ display: 'block' }}>
+          <Typography component={hrefLink} target="_blank" rel="noopener noreferrer" href={uni?.officialSite} key={index} variant="body1" sx={{ display: 'block' }}>
             {uni?.name}
-          </Link>
+          </Typography>
         ))}
       </div>
     ),
@@ -59,8 +61,8 @@ const AdminHome = () => {
       firstName: 'John',
       lastName: 'Doe',
       universities: [
-        { name: 'Harvard', id: '1' },
-        { name: 'MIT', id: '2' },
+        { name: 'Harvard', id: '1', officialSite: 'https://www.harvard.edu' },
+        { name: 'MIT', id: '2', officialSite: 'https://www.mit.edu' },
       ],
       status: 'Applied',
     },
@@ -68,7 +70,7 @@ const AdminHome = () => {
       id: 2,
       firstName: 'Jane',
       lastName: 'Smith',
-      universities: [{ name: 'Stanford', id: '3' }],
+      universities: [{ name: 'Stanford', id: '3', officialSite: 'https://www.standford.edu' }],
       status: 'Applied',
     },
   ]);

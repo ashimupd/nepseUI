@@ -9,7 +9,8 @@ import { useUserContext } from '../userContetx';
 
 const Home = () => {
   const { userData: user } = useUserContext();
-  const homePageToDisplay = user?.isAdmin ? <AdminHome /> : user?.id > 0 ? <HomePostLogin /> : <HomePreLogin />;
+  const homePageToDisplay = user?.id > 0 ? user?.isAdmin ? <AdminHome /> : <HomePostLogin /> : <HomePreLogin />;
+
   return <>{homePageToDisplay}</>;
 };
 

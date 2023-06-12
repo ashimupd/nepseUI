@@ -10,7 +10,9 @@ import MailIcon from '@mui/icons-material/Mail';
 const AddressDetails = ({ data }) => {
   return (
     <Box sx={{ p: 2, my: 2, border: '1px solid #ccc', borderRadius: '4px' }}>
-      <Typography variant="h6">Address Details</Typography>
+      <Typography pb={1} variant="h6">
+        Address Details
+      </Typography>
       <Typography sx={{ display: 'flex', alignItems: 'center' }}>
         <HomeIcon sx={{ mr: 1 }} />
         {data.street}
