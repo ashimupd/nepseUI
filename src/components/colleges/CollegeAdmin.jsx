@@ -87,6 +87,11 @@ const AddSectionModal = ({ onSectionAdded }) => {
       console.error('Error saving section data:', error);
     }
     setOpen(false);
+    setContent('');
+    setDescription([]);
+    setCollegeId('');
+    setImageFiles([]);
+    setTitle('');
   };
 
   return (

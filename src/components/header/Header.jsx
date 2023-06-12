@@ -17,7 +17,7 @@ import LoginRegisterButtons from '../login/Buttons';
 import { useUserContext } from '../userContetx';
 
 const preLoginPages = routes.filter((route) => route?.header && !route?.protected);
-const postLoginPages = routes.filter((route) => route?.header && route?.protected);
+const postLoginPages = routes.filter((route) => route?.header && route?.protected && !route?.isAdminPage);
 const postLoginAdminPages = routes.filter((route) => route?.header && route?.protected && route?.isAdminPage);
 
 // eslint-disable-next-line react/prop-types
