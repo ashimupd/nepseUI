@@ -94,7 +94,7 @@ const AdminHome = () => {
       return (
         row.firstName.toLowerCase().includes(searchText.toLowerCase()) ||
         row.lastName.toLowerCase().includes(searchText.toLowerCase()) ||
-        row.universities.some((uni) => uni.toLowerCase().includes(searchText.toLowerCase()))
+        row.universities.some((uni) => uni?.name?.toLowerCase().includes(searchText.toLowerCase()))
       );
     });
   }, [searchText, rows]);
