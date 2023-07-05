@@ -4,6 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Button, TextField, Modal, Box, Typography, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import axios from 'axios';
 import { Input } from 'antd';
+import { Chip } from '@mui/material'; // Import Chip component
 
 const CollegeAdmin = () => {
   const handleSectionAdded = useCallback((newSection) => {
@@ -25,6 +26,7 @@ const AddSectionModal = ({ onSectionAdded }) => {
   const [description, setDescription] = useState([]);
   const [imageFiles, setImageFiles] = useState([]);
   const [collegeId, setCollegeId] = useState('');
+  const [editingIndex, setEditingIndex] = useState(null); // Keep track of which section is being edited
 
   useEffect(() => {
     // On next load, it shoudld get the data from the API, that saved before
@@ -61,42 +63,54 @@ const AddSectionModal = ({ onSectionAdded }) => {
     setContent('');
   };
 
+  // Function to delete specific content within the section
+  const handleDeleteContent = (contentIndex) => {
+    const updatedDescription = [...description];
+    updatedDescription.splice(contentIndex, 1);
+    setDescription(updatedDescription);
+  };
+
+  const handleDelete = (index) => {
+    const updatedSections = [...sections];
+    updatedSections.splice(index, 1);
+    setSections(updatedSections);
+  };
+
+  const handleEdit = (index) => {
+    const section = sections[index];
+    setTitle(section.title);
+    setDescription(section.description);
+    setImageFiles(section.imageFiles);
+    setEditingIndex(index); // Set the index of the section being edited
+    setOpen(true);
+  };
+
   const handleOK = async () => {
-    const newSection = {
+    const updatedSection = {
       title,
       description,
       imageFiles,
-      collegeId,
     };
-    console.log(newSection);
-    // Saving the data to the db logic goes here making network calls and all
-    try {
-      // Save section data to database
-      // const response = await axios.post('/api/sections', newSection);
 
-      // Upload images
-      //   const formData = new FormData();
-      //   imageFiles.forEach((file) => formData.append('images', file));
-      //   await axios.post('/api/upload', formData, {
-      //     headers: {
-      //       'Content-Type': 'multipart/form-data',
-      //     },
-      //   });
-
-      // Update state and trigger callback to refresh the parent component
-      setSections([...sections, newSection]);
+    if (editingIndex !== null) {
+      // If editing, update the specific section
+      const updatedSections = [...sections];
+      updatedSections[editingIndex] = updatedSection;
+      setSections(updatedSections);
+    } else {
+      // Otherwise, add a new section
+      setSections([...sections, updatedSection]);
       if (onSectionAdded) {
-        onSectionAdded(newSection);
+        onSectionAdded(updatedSection);
       }
-    } catch (error) {
-      console.error('Error saving section data:', error);
     }
-    setOpen(false);
-    setContent('');
-    setDescription([]);
-    setCollegeId('');
-    setImageFiles([]);
+
+    // Reset state variables
     setTitle('');
+    setDescription([]);
+    setImageFiles([]);
+    setOpen(false);
+    setEditingIndex(null); // Reset editing index
   };
 
   return (
@@ -132,11 +146,18 @@ const AddSectionModal = ({ onSectionAdded }) => {
           <Button onClick={handleModalClose} variant="contained">
             Cancel
           </Button>
-          {description.map((desc, index) => (
-            <Box key={index} sx={{ p: 2, my: 2, border: '1px solid #ccc', borderRadius: '4px' }}>
-              <Typography sx={{ overflowWrap: 'break-word' }} key={index}>
-                {Array.isArray(desc) ? `- ${desc}` : desc}
-              </Typography>
+          {description.map((desc, contentIndex) => (
+            <Box key={contentIndex} sx={{ p: 2, my: 2, border: '1px solid #ccc', borderRadius: '4px' }}>
+              <Chip
+                key={contentIndex}
+                label={
+                  <Typography sx={{ overflowWrap: 'break-word' }} key={contentIndex}>
+                    {Array.isArray(desc) ? `- ${desc}` : desc}
+                  </Typography>
+                }
+                onDelete={() => handleDeleteContent(contentIndex)}
+                sx={{ m: 1 }}
+              ></Chip>
             </Box>
           ))}
         </Box>
@@ -151,6 +172,12 @@ const AddSectionModal = ({ onSectionAdded }) => {
               {Array.isArray(desc) ? `- ${desc}` : desc}
             </Typography>
           ))}
+          <Button onClick={() => handleEdit(index)} variant="contained">
+            Edit
+          </Button>
+          <Button sx={{ ml: 4 }} onClick={() => handleDelete(index)} variant="contained" color="secondary">
+            Delete
+          </Button>
         </Box>
       ))}
     </Box>

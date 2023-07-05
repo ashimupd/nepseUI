@@ -15,7 +15,7 @@ export const UserContextProvider = ({ children }) => {
       id: 1, // falsy value indicates not logged in, values other than falsy indicates loggedin user
       photo: null,
       isAdmin: 1,
-      hasFilledApplication: 0,
+      hasFilledApplication: 1,
       appliedUniversityIds: ['1', '2', '3'],
     };
     setUserData(user);
